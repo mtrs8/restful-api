@@ -5,9 +5,19 @@ const mongoose = require('mongoose');
 
 const app = express();
 const router = express.Router();
+const config = require('./config');
 
 //Conexão ao Mongo
-mongoose.connect('mongodb+srv://root:root123@cluster0.hr95k.mongodb.net/dbteste-api?retryWrites=true&w=majority');
+mongoose.connect(config.connectionString, {
+    useCreateIndex: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: true
+}).then(() => {
+    console.log("Mongodb connected...");
+}).catch((err) => {
+    console.log(err);
+});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
