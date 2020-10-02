@@ -2,7 +2,9 @@
 
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/customer-controller');
+const controller = require('../controllers/pedido-controller');
+
+router.get('/', controller.get);
 
 router.post('/', controller.post);
 

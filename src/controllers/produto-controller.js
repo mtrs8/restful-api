@@ -1,11 +1,11 @@
 'use strict';
 
 const ValidationContract = require('../validators/fluent-validator');
-const repository = require('../repositories/product-repository');
+const repository = require('../repositories/produto-repository');
 
 exports.get = async (req, res, next) => {
     try{
-        const data = await repository.get();       
+        var data = await repository.get();       
         res.status(200).send(data);
     } catch(e) {
         res.status(500).send(data);

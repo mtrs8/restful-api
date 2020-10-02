@@ -24,16 +24,20 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //carrega os models
-const Product = require('./models/product');
-const Customer = require('./models/customer');
+const Product = require('./models/produto');
+const Customer = require('./models/cliente');
+const Order = require('./models/pedido');
 
 //Carrega as rotas
 const indexRoute = require('./routes/index-route');
-const productRoute = require('./routes/product-route');
-const customerRoute = require('./routes/customer-route');
+const produtoRoute = require('./routes/produto-route');
+const clienteRoute = require('./routes/cliente-route');
+const pedidoRoute = require('./routes/pedido-route');
+
 
 app.use('/', indexRoute);
-app.use('/products', productRoute);
-app.use('/customers', customerRoute);
+app.use('/produtos', produtoRoute);
+app.use('/clientes', clienteRoute);
+app.use('/pedidos', pedidoRoute);
 
 module.exports = app;
