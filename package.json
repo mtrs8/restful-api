@@ -1,0 +1,23 @@
+{
+  "name": "node-str",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/server.js",
+    "dev": "nodemon ./bin/server.js"
+  },
+  "keywords": [],
+  "author": "Matheus Alves Rodrigues",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "mongoose": "^5.10.7"
+  },
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "nodemon": "^2.0.4"
+  }
+}
