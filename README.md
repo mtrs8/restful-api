@@ -4,4 +4,4 @@ Tema: Criptografia - Autenticação de usuários e produtos utilizando Token.
 
 Autor: Matheus A. Rodrigues
 
-[Referências]:  (https://balta.io), (https://rocketseat.com.br/)
+[Referências]:  ({{https://balta.io}})({{https://rocketseat.com.br/}})
