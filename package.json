@@ -16,7 +16,8 @@
     "guid": "0.0.12",
     "http": "0.0.1-security",
     "md5": "^2.3.0",
-    "mongoose": "^5.10.7"
+    "mongoose": "^5.10.7",
+    "sendgrid": "^2.0.0"
   },
   "devDependencies": {
     "body-parser": "^1.19.0",
