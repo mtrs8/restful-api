@@ -13,10 +13,10 @@ router.get('/tags/:tag', controller.getByTag);
 
 router.get('/admin/:id', controller.getById);
 
-router.post('/', authService.authorize, controller.post);
+router.post('/', authService.isAdmin, controller.post);
 
-router.put('/:id', authService.authorize, controller.put);
+router.put('/:id', authService.isAdmin, controller.put);
 
-router.delete('/', authService.authorize, controller.delete);
+router.delete('/', authService.isAdmin, controller.delete);
 
 module.exports = router;

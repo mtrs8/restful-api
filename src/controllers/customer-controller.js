@@ -42,7 +42,8 @@ exports.authenticate = async(req, res, next) => {
     try {
         const customer = await repository.authenticate({
             email: req.body.email,
-            password: md5(req.body.password + global.SALT_KEY)
+            password: md5(req.body.password + global.SALT_KEY),
+            roles: ["user"]
         });
         if (!customer) {
             res.status(404).send({
