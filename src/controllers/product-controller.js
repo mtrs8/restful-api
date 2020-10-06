@@ -8,8 +8,9 @@ exports.get = async (req, res, next) => {
         var data = await repository.get();       
         res.status(200).send(data);
     } catch(e) {
-        res.status(500).send(data);
-        message: 'Falha ao processar requisição!'
+        res.status(500).send({
+            message: 'Falha ao processar requisição!'
+        });
     }
 };
 
@@ -18,8 +19,9 @@ exports.getBySlug = async (req, res, next) => {
         const data = await repository.getBySlug(req.params.slug);
             res.status(200).send(data);
     } catch(e) {
-        res.status(500).send(data);
-        message: 'Falha ao processar requisição!'
+        res.status(500).send({
+            message: 'Falha ao processar requisição!'
+        });
     }
 };
 
@@ -28,8 +30,9 @@ exports.getById = async(req, res, next) => {
         const data = repository.getById(req.params.id);       
         res.status(200).send(data);
     } catch(e) {
-        res.status(500).send(data);
-        message: 'Falha ao processar requisição!'
+        res.status(500).send({
+            message: 'Falha ao processar requisição!'
+        });
     }
 };
 
@@ -38,8 +41,9 @@ exports.getByTag = async(req, res, next) => {
         const data = await repository.getByTag(req.params.tag);       
         res.status(200).send(data);
     } catch(e) {
-        res.status(500).send(data);
-        message: 'Falha ao processar requisição!'
+        res.status(500).send({
+            message: 'Falha ao processar requisição!'
+        });
     }
 };
 
@@ -59,6 +63,7 @@ exports.post = async(req, res, next) => {
         await repository.create(req.body);
         res.status(201).send({ message: 'Produto cadastrado com sucesso!' });
     } catch(e){
+        console.log(e);
         res.status(500).send({
             message: 'Falha ao processar requisição!'
         });
@@ -68,7 +73,7 @@ exports.post = async(req, res, next) => {
 exports.put = async(req, res, next) => {
     try{
         await repository.update(req.params.id, req.body);
-        res.status(200).send({
+        res.status(201).send({
                 message: "Produto atualizado com sucesso!"
             });
         }catch(e){
